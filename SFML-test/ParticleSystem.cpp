@@ -22,7 +22,7 @@ void ParticleSystem::update(sf::Time elapsed)
 	{
 		Particle& p = m_particles[i];
 
-		p.lifeTime -= elapsed;
+		//p.lifeTime -= elapsed;
 
 		if (p.lifeTime <= sf::Time::Zero)
 			resetParticle(i);
@@ -51,6 +51,8 @@ void ParticleSystem::update(sf::Time elapsed)
 		float ratioLifetime = p.lifeTime.asSeconds() / m_lifetime.asSeconds();
 		m_vertices[i].color.a = static_cast<sf::Uint8>(ratioLifetime * 255);
 
+		delete quad;
+
 	}
 }
 
@@ -75,5 +77,5 @@ void ParticleSystem::resetParticle(std::size_t index)
 	quad[2].color = quad[0].color;
 	quad[3].color = quad[0].color;
 
-	m_vertices[index * 4].position = m_emitter;
+	m_vertices[index * 4].position = sf::Vector2f(std::rand() % 1280, std::rand() % 720); //m_emitter;
 }

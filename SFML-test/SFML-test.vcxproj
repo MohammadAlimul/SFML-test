@@ -133,11 +133,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Arm.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="RoundedRectangleShape.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Arm.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="RoundedRectangleShape.hpp" />
   </ItemGroup>
